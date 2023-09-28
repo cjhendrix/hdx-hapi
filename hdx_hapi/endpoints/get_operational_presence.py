@@ -17,7 +17,7 @@ router = APIRouter(
 async def get_operational_presences(
     pagination_parameters: Annotated[dict, Depends(pagination_parameters)],
     db: AsyncSession = Depends(get_db),
-    org_ref: Annotated[int, Query(ge=1, description='Organization reference')] = None,
+    org_ref: Annotated[int, Query(ge=1, description='Organization reference number')] = None,
     location_name: Annotated[str, Query(max_length=10, description='Location name')] = None,
 ):
     """
